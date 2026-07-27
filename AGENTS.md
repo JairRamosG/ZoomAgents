@@ -4,7 +4,12 @@ follow.
 
 Documents
 
-- `_docs/process.md` - how work is organized
+- `_docs/process.md` - how work is organized (issue lifecycle, labels, dependencies)
+- `_docs/task_template.md` - template for grooming GitHub issues
+- `_docs/team/pm.md` - PM role: grooming, labels, dependency tracking
+- `_docs/outdated/plan.md` - MVP scope and product decisions (reference, not active)
+- `_docs/outdated/architecture.md` - system design and stack (reference, not active)
+- `_docs/outdated/tasks.md` - original task backlog (source for GitHub issues)
 
 Commands
 
