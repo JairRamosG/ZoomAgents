@@ -10,12 +10,12 @@ WORKDIR /app
 
 COPY pyproject.toml uv.lock ./
 
-RUN uv sync --locked --no-dev --no-install-project
+RUN uv sync --locked --no-install-project --all-extras
 
 COPY . .
 
-RUN uv sync --locked --no-dev
+RUN uv sync --locked --all-extras
 
 EXPOSE 8000
 
-CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["uv", "run", "gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
