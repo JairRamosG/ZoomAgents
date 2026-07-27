@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block nav_links %}
+  {% if user.is_authenticated %}
+    <span class="text-sm text-gray-600">{{ user.username }}</span>
+    <a href="{% url 'logout' %}" class="link">Cerrar sesión</a>
+  {% else %}
+    <a href="{% url 'login' %}" class="link">Iniciar sesión</a>
+    <a href="{% url 'signup' %}" class="link">Crear cuenta</a>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{
+  "name": "zoomagents",
+  "private": true,
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i assets/css/app.css -o static/css/app.css --minify",
+    "watch:css": "npx @tailwindcss/cli -i assets/css/app.css -o static/css/app.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.11",
+    "@tailwindcss/cli": "^4.1.11"
+  }
+}

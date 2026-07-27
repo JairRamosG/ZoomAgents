@@ -1,0 +1,19 @@
+{% extends "base_app.html" %}
+
+{% block title %}ZoomAgents{% endblock %}
+
+{% block content %}
+  <h1 class="page-heading">ZoomAgents</h1>
+  <div class="panel">
+    <p class="mb-4">Herramienta de feedback semanal para equipos.</p>
+    <button
+      class="btn-secondary"
+      hx-get="{% url 'home' %}"
+      hx-target="#demo-output"
+      hx-swap="innerHTML"
+    >
+      Probar HTMX
+    </button>
+    <div id="demo-output" class="mt-4"></div>
+  </div>
+{% endblock %}

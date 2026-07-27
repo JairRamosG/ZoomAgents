@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+.venv/
+
+# Django
+*.sqlite3
+staticfiles/
+media/
+scratch/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# pytest
+.pytest_cache/
+
+# ruff
+.ruff_cache/
+
+# Node (build tooling)
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

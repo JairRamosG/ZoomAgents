@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-secondary: #64748b;
+  --color-secondary-hover: #475569;
+}
+
+.btn-primary {
+  @apply rounded bg-[var(--color-primary)] px-4 py-2 text-white hover:bg-[var(--color-primary-hover)];
+}
+
+.btn-secondary {
+  @apply rounded bg-[var(--color-secondary)] px-4 py-2 text-white hover:bg-[var(--color-secondary-hover)];
+}
+
+.link {
+  @apply text-[var(--color-primary)] underline hover:text-[var(--color-primary-hover)];
+}
+
+.page-heading {
+  @apply mb-6 text-2xl font-bold;
+}
+
+.panel {
+  @apply rounded-lg bg-white p-6 shadow;
+}
+
+.form-fields {
+  @apply flex flex-col gap-4;
+}
+
+.form-fields label {
+  @apply text-sm font-medium text-gray-700;
+}
+
+.form-fields input[type="text"],
+.form-fields input[type="password"],
+.form-fields input[type="email"] {
+  @apply w-full rounded border border-gray-300 px-3 py-2 focus:border-[var(--color-primary)] focus:outline-none;
+}
+
+.form-fields .errorlist {
+  @apply mt-1 text-sm text-red-600;
+}
+
+.form-fields .helptext {
+  @apply text-xs text-gray-500;
+}

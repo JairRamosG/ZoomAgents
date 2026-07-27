@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres:18
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: zoomagents
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+  web:
+    build: .
+    image: zoomagents-web
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    volumes:
+      - scratch:/app/scratch
+    env_file: .env
+
+  worker:
+    image: zoomagents-web
+    # --no-reload: the worker is a long-running process that does not need to
+    # restart on code changes; under Compose the source is not mounted anyway,
+    # and auto-reload would fight with the worker's own process management.
+    command: uv run manage.py db_worker --no-reload
+    depends_on:
+      - db
+    volumes:
+      - scratch:/app/scratch
+    env_file: .env
+
+volumes:
+  pgdata:
+  scratch:
